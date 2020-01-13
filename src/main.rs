@@ -35,5 +35,51 @@ fn main() {
 
 	// Euclidean Distance calculation
 	// let distance = euclidean_distance::Coordinates::get_distance();
-	// println!("distance is {}",distance);
+    // println!("distance is {}",distance);
+    
+    //12th JANUARY 2020 ASSIGNMENTS
+    closures()
+}
+
+fn closures(){
+    //ASSIGNMENT 1
+    // WRITE A CLOSURE THAT SUMS 2 NUMBERS
+    let sum_closure = | i : i32 , j : i32 | -> i32 {
+        i + j    
+    };
+    let sum = sum_closure(5,6);
+    println!("sum is {}",sum);
+
+
+    //ASSIGNMENT 2
+    // WRITE A CLOSURE THAT CHECKS IF A NUMBER IS PRIME
+    let prime_closure = |prime : i32| -> bool {
+
+        if prime == 0 {
+            print!("{} is a not prime",prime);
+            return false
+        }
+
+        if prime == 1 {
+            print!("{} is a prime",prime);
+            return true
+        }
+
+        let mut is_prime = true;
+        for i in 2..9{
+            if i != prime && prime % i == 0 {
+                is_prime = false;
+                break
+            }
+        }
+        if is_prime {
+            println!("{} is a prime",prime);
+        }else{
+            println!("{} is a not prime",prime);
+        }
+        
+        return is_prime
+    };
+
+    prime_closure(6);
 }
