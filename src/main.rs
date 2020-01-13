@@ -11,6 +11,12 @@ mod euclidean_distance;
 mod palindrome_checker;
 mod repetitive_string;
 
+// 5 Jan Assignments :: Generics & Traits
+mod generics;
+mod traits;
+
+use traits::{Book,BookInformation};
+
 fn main() {
     //29 Dec Assignments
     // Assignment 1 : 
@@ -27,18 +33,35 @@ fn main() {
 
 
     //17 Dec Assignments
-    // Check if entered string is palindrome;
+    // QUESTION : Check if entered string is palindrome;
 	// palindrome_checker::palindrome();
 	
-	// Print entered string repetitively
+	// QUESTION : Print entered string repetitively
 	// repetitive_string::repetitively();
 
-	// Euclidean Distance calculation
+	// QUESTION : Euclidean Distance calculation
 	// let distance = euclidean_distance::Coordinates::get_distance();
     // println!("distance is {}",distance);
     
     //12th JANUARY 2020 ASSIGNMENTS
-    closures()
+    //closures()
+
+    //5th JANUARY ASSIGNMENTS
+    // TASK 1 
+    // IMPLEMENT PYTHAGORUS THEOREM WITH GENERIC TRIANGLE
+    // let triangle_int = generics::RightAngleTriangle{ base:7, perpendicular:13 };
+    // println!("Hypotenuse is {}",triangle_int.calculate_hypotenus());
+
+    // let triangle_float = generics::RightAngleTriangle{ base:7.0, perpendicular:13.0 };
+    // println!("Hypotenuse is {}",triangle_float.calculate_hypotenus());
+
+    //TASK 2
+    //IMPLEMENT TRAITS
+    let author = String::from("Shezu");
+    let publisher = String::from("Shezu");
+
+    let book_implementer : Book =  Book{author: author, publisher:publisher};
+    traits::print_book_info(book_implementer);
 }
 
 fn closures(){
